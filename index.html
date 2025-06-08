@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rock paper scissors</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barriecito|Mansalva|">
   <style>
     body {
       display: flex;
@@ -12,6 +13,7 @@
     justify-content: center;
       align-items: center;
       background-color: #282828;
+      font-family: Mansalva;
     }
     
     .button {
@@ -29,6 +31,7 @@
       height: 50px;
       font-size: 1.8rem;
       border: none;
+      font-family: Barriecito;
     }
     
     img {
@@ -53,6 +56,7 @@
       display: flex;
       flex-direction: column;
       width: 100%;
+     
     }
     #score{
       width: 25%;
@@ -60,12 +64,13 @@
       background-color: darkgray;
       text-align: center;
     }
-#winner{width: 45%;
+#winner{width: 50%;
   font-size: 1rem;
       background-color: darkgray;
       text-align: center;
       height: 50px;
-      
+      justify-content: center;
+      align-items: center;
 }
 #scoreboard{
   display: flex;
@@ -77,12 +82,22 @@
 }
 h1{
   color: white;
+  font-family: Barriecito;
 }
 #pcs{
   background-color: #585858;
-  width: 170px;
+  width: 50%;
+  justify-content: center;
 }
-
+#wresh{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 5px;
+}
+#Refresh{
+  display: none;
+}
   </style>
 </head>
 
@@ -97,13 +112,16 @@ h1{
     
 
   <div id="score">
-    Score
+    Score by 5
   </div>
   <div id="scoreboard">
     <div id="cval">
     <p>Computer</p>
     <p id="cvalue">0</p>
   </div>
+  <div id="winner">
+  Analytics here
+  </div>  
     <div id="pval">
       
          
@@ -111,7 +129,12 @@ h1{
      <p id="pvalue">0</p>
 
   </div>   </div>
-  <br /><br /><br /><br />
+<br>
+<div id="wresh">
+ 
+<button onclick="window.location.reload();" id="Refresh">New Game</button>
+</div>
+  <br /><br />
   <div id="container">
     
  
@@ -135,15 +158,14 @@ h1{
     <button class="button" id="scissor" type="submit" onclick="scissors()"><img src="/scissors.png" alt="">
     </button>
   </div>
-  <br /><br /><br />
+  <br />
   <button type="submit" id="play" onclick="play()">Play</button> <br /> <br /> <br />
 
   
   </div><br /><br />
-    <div id="winner">
-  </div>  
+   
   
 </body>
-<script src="/new.js"></script>
+<script src="/script.js"></script>
 
 </html>

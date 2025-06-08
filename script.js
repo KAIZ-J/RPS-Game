@@ -34,6 +34,7 @@ const scissors=document.getElementById("scissor");
   
   
   function play(){
+    const ref = document.getElementById("Refresh");
     const contain = document.getElementById("container");
     const pvalue=document.getElementById("pvalue");
     const cvalue=document.getElementById("cvalue");
@@ -72,7 +73,7 @@ else if (compch.innerHTML=="Paper" && person.innerHTML=="Rock") {
   cnum += 1 ; 
 }
 else if (person.innerHTML===compch.innerHTML) {
-  result.innerHTML="The Computer and You chose the same, It's a tie";
+  result.innerHTML="It's a tie";
 }
 
 else  {
@@ -84,11 +85,12 @@ pvalue.textContent = pnum;
   if (pnum > 4) {
   contain.style.display="none";
     result.innerHTML="YOU WONN🎉🎉";
-  
+  ref.style.display="block";
   }
   else if (cnum > 4) {
     contain.style.display="none";
     result.innerHTML="You lost💔💔";
+     ref.style.display="block";
 
   }else {
     console.log("what?")
