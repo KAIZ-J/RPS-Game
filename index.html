@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rock paper scissors</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+    justify-content: center;
+      align-items: center;
+      background-color: #282828;
+    }
+    
+    .button {
+      width: 100px;
+      height: 50px;
+      border: none;
+    }
+    
+    hr {
+      width: 300px;
+    }
+    
+    #play {
+      width: 50%;
+      height: 50px;
+      font-size: 1.8rem;
+      border: none;
+    }
+    
+    img {
+      width: 30px;
+    }
+    
+    #pcs {
+      display: flex;
+      gap: 5px;
+    }
+    #pval,#cval {
+      text-align: center;
+      gap: 5px;
+      width: 20%;
+      background-color: white;
+      
+    }
+    #container{
+      background-color: darkgray;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    #score{
+      width: 25%;
+      font-size: 1.5rem;
+      background-color: darkgray;
+      text-align: center;
+    }
+#winner{width: 45%;
+  font-size: 1rem;
+      background-color: darkgray;
+      text-align: center;
+      height: 50px;
+      
+}
+#scoreboard{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  
+}
+h1{
+  color: white;
+}
+#pcs{
+  background-color: #585858;
+  width: 170px;
+}
+
+  </style>
+</head>
+
+<body>
+  
+  
+  
+  <h1>
+    Rock Paper Scissors
+  </h1>
+  
+    
+
+  <div id="score">
+    Score
+  </div>
+  <div id="scoreboard">
+    <div id="cval">
+    <p>Computer</p>
+    <p id="cvalue">0</p>
+  </div>
+    <div id="pval">
+      
+         
+    <p>You</p>
+     <p id="pvalue">0</p>
+
+  </div>   </div>
+  <br /><br /><br /><br />
+  <div id="container">
+    
+ 
+  <div id="pcs">
+    <p>Computer choice:</p>
+    <p id="pc"></p>
+  </div>
+  
+  <hr />
+  <br />
+  <div id="person">
+    Choose your weapon then press play
+  </div> <br />
+  <div id="choices">
+    <button class="button" id="rock" type="submit" onclick="rock()">
+      <img src="/fist.png" alt="">
+    </button>
+    <button class="button" id="paper" type="submit" onclick="paper()">
+      <img src="/hand-paper.png" alt="">
+    </button>
+    <button class="button" id="scissor" type="submit" onclick="scissors()"><img src="/scissors.png" alt="">
+    </button>
+  </div>
+  <br /><br /><br />
+  <button type="submit" id="play" onclick="play()">Play</button> <br /> <br /> <br />
+
+  
+  </div><br /><br />
+    <div id="winner">
+  </div>  
+  
+</body>
+<script src="/new.js"></script>
+
+</html>
