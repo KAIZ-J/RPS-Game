@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rock paper scissors</title>
   <meta name="description" content="a simple a person versus bot game where each player simultaneously chooses one of three options: rock, paper, or scissors.">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barriecito|Mansalva|">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monomaniac One|Comfortaa|">
   <style>
     body {
       display: flex;
@@ -14,13 +14,14 @@
     justify-content: center;
       align-items: center;
       background-color: #282828;
-      font-family: Mansalva;
+      font-family: Comfortaa;
     }
     
     .button {
       width: 100px;
       height: 50px;
       border: none;
+      border-radius: 100px;
     }
     
     hr {
@@ -30,9 +31,11 @@
     #play {
       width: 50%;
       height: 50px;
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       border: none;
-      font-family: Barriecito;
+      font-family: Comfortaa;
+      border-radius: 100px;
+      
     }
     
     img {
@@ -42,6 +45,7 @@
     #pcs {
       display: flex;
       gap: 5px;
+      color: bisque;
     }
     #pval,#cval {
       text-align: center;
@@ -61,9 +65,10 @@
     }
     #score{
       width: 25%;
-      font-size: 1.5rem;
+      font-size: 1rem;
       background-color: darkgray;
       text-align: center;
+      height: 5vh;
     }
 #winner{width: 50%;
   font-size: 1rem;
@@ -83,7 +88,7 @@
 }
 h1{
   color: white;
-  font-family: Barriecito;
+  font-family:Monomaniac One;
 }
 #pcs{
   background-color: #585858;
@@ -121,7 +126,7 @@ h1{
     <p id="cvalue">0</p>
   </div>
   <div id="winner">
-  Analytics here
+  Stats of the game
   </div>  
     <div id="pval">
       
@@ -135,7 +140,7 @@ h1{
  
 <button onclick="window.location.reload();" id="Refresh">New Game</button>
 </div>
-  <br /><br />
+  
   <div id="container">
     
  
@@ -145,7 +150,7 @@ h1{
   </div>
   
   <hr />
-  <br />
+  
   <div id="person">
     Choose your weapon then press play
   </div> <br />
@@ -160,10 +165,10 @@ h1{
     </button>
   </div>
   <br />
-  <button type="submit" id="play" onclick="play()">Play</button> <br /> <br /> <br />
+  <button type="submit" id="play" onclick="play()">Play</button> <br />
 
   
-  </div><br /><br />
+  </div>
    
   
 </body>
