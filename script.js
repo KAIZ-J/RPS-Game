@@ -6,8 +6,8 @@ function rock() {
 const scissors=document.getElementById("scissor");         
     person.innerHTML="Rock";
     rock.style.backgroundColor="red";
-    scissors.style.backgroundColor="black";
-    paper.style.backgroundColor="black";
+    scissors.style.backgroundColor="darkGrey";
+    paper.style.backgroundColor="darkGrey";
   }
   
   function paper() {
@@ -17,8 +17,8 @@ const scissors=document.getElementById("scissor");
 const scissors=document.getElementById("scissor");         
     person.innerHTML="Paper";
     paper.style.backgroundColor="red";
-    scissors.style.backgroundColor="black";
-    rock.style.backgroundColor="black";
+    scissors.style.backgroundColor="darkGrey";
+    rock.style.backgroundColor="darkGrey";
   }
   function scissors() {
     const person=document.getElementById("person");
@@ -27,8 +27,8 @@ const scissors=document.getElementById("scissor");
 const scissors=document.getElementById("scissor");         
     person.innerHTML="Scissors";
     scissors.style.backgroundColor="red";
-    paper.style.backgroundColor="black";
-    rock.style.backgroundColor="black";
+    paper.style.backgroundColor="darkGrey";
+    rock.style.backgroundColor="darkGrey";
   }
   
   
