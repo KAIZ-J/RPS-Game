@@ -1,98 +1,90 @@
-function rock() {
-  
-    const person=document.getElementById("person");
-   const rock=document.getElementById("rock");
- const paper=document.getElementById("paper");
-const scissors=document.getElementById("scissor");         
-    person.innerHTML="Rock";
-    rock.style.backgroundColor="red";
-    scissors.style.backgroundColor="black";
-    paper.style.backgroundColor="black";
+document.getElementById("theme-select").addEventListener("change",function(){
+  document.body.classList.toggle("dark")
+})
+const home = document.getElementById("home")
+const gameContainer = document.getElementById("game-container");
+const resultContainer = document.getElementById("game-container");
+const userChose = document.getElementById("userChose")
+const computerChose = document.getElementById("computerChose");
+const analysis = document.getElementById("Analysis");
+const userScoreText= document.getElementById("userScoreText")
+const computerScoreText= document.getElementById("computerScoreText");
+let userScore = 0;
+let computerScore=0;
+function pcChoice(){
+  const array = ["Rock","Paper","Scissors"];
+  return array[Math.floor(Math.random()*array.length)]
+}
+function didUserWon(user,pc){
+  if(user==="Rock" && pc==="Scissors"){
+ return true;
   }
-  
-  function paper() {
-    const person=document.getElementById("person");
-   const rock=document.getElementById("rock");
- const paper=document.getElementById("paper");
-const scissors=document.getElementById("scissor");         
-    person.innerHTML="Paper";
-    paper.style.backgroundColor="red";
-    scissors.style.backgroundColor="black";
-    rock.style.backgroundColor="black";
+  else if(user==="Paper" && pc==="Rock"){
+ return true;
   }
-  function scissors() {
-    const person=document.getElementById("person");
-   const rock=document.getElementById("rock");
- const paper=document.getElementById("paper");
-const scissors=document.getElementById("scissor");         
-    person.innerHTML="Scissors";
-    scissors.style.backgroundColor="red";
-    paper.style.backgroundColor="black";
-    rock.style.backgroundColor="black";
+  else if(user==="Scissors" && pc==="Paper"){
+ return true;
   }
-  
-  
-  
-  function play(){
-    const ref = document.getElementById("Refresh");
-    const contain = document.getElementById("container");
-    const pvalue=document.getElementById("pvalue");
-    const cvalue=document.getElementById("cvalue");
-    let pnum = Number(pvalue.textContent);
-let cnum = Number(cvalue.textContent);
-    const pchoice=["Rock","Paper","Scissors"];
-  const randomindex = Math.floor(Math.random()*3);
-  
-  const pcchoice = pchoice[randomindex];
-  console.log(pcchoice);
-const compch = document.getElementById("pc");
-const result = document.getElementById("winner");
-compch.innerHTML=`${pcchoice}` ;
-if (person.innerHTML=="Scissors" && compch.innerHTML=="Paper") {
-  result.innerHTML="You win +1";
-  pnum += 1 ;
-} 
-else if (person.innerHTML=="Rock" && compch.innerHTML=="Scissors") {
-  result.innerHTML="You win +1";
-  pnum += 1 ;
+  else{
+    return false;
+  }
 }
-else if (person.innerHTML=="Paper" && compch.innerHTML=="Rock") {
-  result.innerHTML="You win +1";
-  pnum += 1 ;
+function gameReset(){
+  userScore=0;
+  computerScore=0;
+  userChose.innerHTML="";
+  computerChose.innerHTML="";
+  analysis.innerHTML="Analysis"
 }
-else if (compch.innerHTML=="Rock" && person.innerHTML=="Scissors") {
-  result.innerHTML = " You lost,Play Again!";
-cnum += 1;
+function startGame(){
+resultContainer.style.display="none";
+home.style.display="none";
+gameContainer.style.display="flex"
+gameReset();
 }
-else if (compch.innerHTML=="Scissors" && person.innerHTML=="Paper") {
-  result.innerHTML=" You lost,Play Again!";
-  cnum += 1 ;
-} 
-else if (compch.innerHTML=="Paper" && person.innerHTML=="Rock") {
-  result.innerHTML=" You lost,Play Again!";
-  cnum += 1 ; 
+function checkScores(){
+  if(userScore===3){
+    resultContainer.innerHTML=`<h2>You Won!</h2>
+    <button type="button" id="playAgain" onclick="startGame()">Play Again</button>`;
+    gameContainer.style.display="none";
+    resultContainer.style.display="flex";
+  }
+  else if(computerScore===3){
+    resultContainer.innerHTML='<h2>You lost</h2> <button type="button" id="tryAgain" onclick="startGame()">Try Again</button>';
+ gameContainer.style.display="none";
+  resultContainer.style.display="flex";
+  }
 }
-else if (person.innerHTML===compch.innerHTML) {
-  result.innerHTML="It's a tie";
-}
+function chosen(elem){
+    document.querySelectorAll(".choice").forEach(el=>el.setAttribute("disabled",true))
+  userChose.style.animation="";
+  computerChose.style.animation=""
+  userChose.innerHTML=`  <img src="${elem.id}.png" alt="">`
+  const computerChoice = pcChoice();
+  setTimeout(function(){
+computerChose.innerHTML=`  <img src="${computerChoice}.png" alt="">`
+  },200)
+  setTimeout(function(){
+if(didUserWon(elem.id,computerChoice)){
+    analysis.innerHTML="You won the round";
+    userChose.style.animation="up 1s ease";
+    userScore++;
+    userScoreText.textContent=userScore;
+    checkScores()
+  }
+  else if(elem.id===computerChoice){
+   analysis.innerHTML="Tie"
+  }
+  else{
+    analysis.innerHTML="You lost the round";
+     computerChose.style.animation="up 1s ease";
+     computerScore++;
+    computerScoreText.textContent=computerScore;
+     checkScores()
+  }
+  userChose.innerHTML="";
+  computerChose.innerHTML="";
+    document.querySelectorAll(".choice").forEach(el=>el.removeAttribute("disabled"))
+  },1000)
 
-else  {
-  result.innerHTML=" You haven't selected your weapon";
-  compch.innerHTML="";
 }
-pvalue.textContent = pnum;
-  cvalue.textContent = cnum;
-  if (pnum > 4) {
-  contain.style.display="none";
-    result.innerHTML="YOU WONN🎉🎉";
-  ref.style.display="block";
-  }
-  else if (cnum > 4) {
-    contain.style.display="none";
-    result.innerHTML="You lost💔💔";
-     ref.style.display="block";
-
-  }else {
-    console.log("what?")
-  }
-  }

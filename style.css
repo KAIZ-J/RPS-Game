@@ -1,0 +1,115 @@
+:root{
+  --text: #0e251c;
+  --background: #e1f4ea;
+  --primary: #286751;
+  --secondary: #89aad1;
+  --accent: #404ca5;
+}
+body.dark {
+  --text: #daf1e8;
+  --background: #0b1e14;
+  --primary: #98d7c1;
+  --secondary: #2e4e76;
+  --accent: #5a66bf;
+}
+
+*{
+  font-family: poppins;
+}
+button{
+outline: none;
+cursor: pointer;
+}
+body {
+      display: flex;
+      flex-direction: column;
+    justify-content: center;
+      align-items: center;
+      background-color: var(--background);
+      color: var(--text);
+      height: 100vh;
+      margin: 0;
+      transition: background-color .5s ease, color .5s ease;
+    }
+  #home{
+    display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+  }
+#play,#playAgain{
+  background-color: var(--primary);
+  padding: 10px;
+  width: 170px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: var(--background);
+}
+#play:hover{
+  box-shadow: 0px 0px 20px var(--accent);
+}
+#theme-select{
+  outline: none;
+  background-color: var(--secondary);
+  width: 100px;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  color: var(--text);
+}
+#game-container{
+  display: none;
+flex-direction: column;
+align-items: center;
+gap: 25px;
+}
+#userChose,#computerChose{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border: 5px solid var(--accent);
+  transition: transform 5s ease;
+}
+#Analysis{
+  background-color: var(--secondary);
+  padding: 5px;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bolder;
+  align-content: center;
+  font-style: italic;
+}
+#chosen-Container{display: flex;
+  gap: 30px;
+}
+img{
+  width: 50px;
+}
+@keyframes up{
+  0%{
+    transform: translateY(-50px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+#scoreboard{
+  display: flex;
+  gap: 10px;
+}
+#scoreboard span{
+  font-weight: bolder;
+}
+#result-container{
+  display: none;
+}
